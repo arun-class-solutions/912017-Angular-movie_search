@@ -49,4 +49,15 @@ app.controller("movieCtrl", function($scope, $http) {
         $scope.movieResultsSuccess = true;
     }
 
+    $scope.resetSearch = function() {
+        // Reset movies array
+        $scope.movies = [];
+
+        // Change movieResultsSuccess back to false to toggle visibility
+        $scope.movieResultsSuccess = false;
+
+        // Clear out search query from input field
+        $scope.movieQuery = "";
+    }
+
 });

@@ -25,50 +25,54 @@
 <div id="movie-card-container"></div>
 
 <!--Movie Cards-->
-<div ng-repeat="movie in movies" ng-show="movieResultsSuccess" class="movie-card border-radius margin-top-20">
-	<div class="row">
-		<div class="col-sm-4">
-			<img src="{{ movie.Poster }}" class="img-responsive movie-poster" />
-		</div>
-		<div class="col-sm-8">
-			<h3 style="margin-top:0;">{{ movie.Title }}</h3>
+<div ng-show="movieResultsSuccess">
+    <button ng-click="resetSearch()" class="btn btn-success btn-block">Search Again</button>
 
-			<div class="row margin-top-20">
-				<div class="col-sm-4">
-					<strong>Year: </strong>{{ movie.Year }}
-				</div>
-				<div class="col-sm-4">
-					<strong>Rated: </strong>{{ movie.Rated }}
-				</div>
-				<div class="col-sm-4">
-					<strong>Released: </strong>{{ movie.Released }}
-				</div>
-			</div>
+    <div ng-repeat="movie in movies" class="movie-card border-radius margin-top-20">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{{ movie.Poster }}" class="img-responsive movie-poster" />
+            </div>
+            <div class="col-sm-8">
+                <h3 style="margin-top:0;">{{ movie.Title }}</h3>
 
-			<div class="row margin-top-20">
-				<div class="col-sm-4">
-					<strong>Runtime: </strong>{{ movie.Runtime }}
-				</div>
-				<div class="col-sm-4">
-					<strong>Genre: </strong>{{ movie.Genre }}
-				</div>
-				<div class="col-sm-4">
-					<strong>Director: </strong>{{ movie.Director }}
-				</div>
-			</div>
+                <div class="row margin-top-20">
+                    <div class="col-sm-4">
+                        <strong>Year: </strong>{{ movie.Year }}
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>Rated: </strong>{{ movie.Rated }}
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>Released: </strong>{{ movie.Released }}
+                    </div>
+                </div>
 
-			<div class="row margin-top-20">
-				<div class="col-sm-12">
-					<strong>Actors: </strong>{{ movie.Actors }}
-				</div>
-			</div>
+                <div class="row margin-top-20">
+                    <div class="col-sm-4">
+                        <strong>Runtime: </strong>{{ movie.Runtime }}
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>Genre: </strong>{{ movie.Genre }}
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>Director: </strong>{{ movie.Director }}
+                    </div>
+                </div>
 
-			<div class="row margin-top-20">
-				<div class="col-sm-12">
-					<strong>Plot: </strong>{{ movie.Plot }}
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="row margin-top-20">
+                    <div class="col-sm-12">
+                        <strong>Actors: </strong>{{ movie.Actors }}
+                    </div>
+                </div>
+
+                <div class="row margin-top-20">
+                    <div class="col-sm-12">
+                        <strong>Plot: </strong>{{ movie.Plot }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--/Movie Cards-->
