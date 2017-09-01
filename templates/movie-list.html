@@ -25,47 +25,47 @@
 <div id="movie-card-container"></div>
 
 <!--Movie Cards-->
-<div ng-show="movieResultsSuccess" class="movie-card border-radius margin-top-20">
+<div ng-repeat="movie in movies" ng-show="movieResultsSuccess" class="movie-card border-radius margin-top-20">
 	<div class="row">
 		<div class="col-sm-4">
-			<img src="http://ia.media-imdb.com/images/M/MV5BMTYxNTM5MDkwMF5BMl5BanBnXkFtZTcwMTAzMTEzMQ@@._V1_SX300.jpg" class="img-responsive movie-poster" />
+			<img src="{{ movie.Poster }}" class="img-responsive movie-poster" />
 		</div>
 		<div class="col-sm-8">
-			<h3 style="margin-top:0;">Cool Movie Title</h3>
+			<h3 style="margin-top:0;">{{ movie.Title }}</h3>
 
 			<div class="row margin-top-20">
 				<div class="col-sm-4">
-					<strong>Year: </strong>2015
+					<strong>Year: </strong>{{ movie.Year }}
 				</div>
 				<div class="col-sm-4">
-					<strong>Rated: </strong>PG-13
+					<strong>Rated: </strong>{{ movie.Rated }}
 				</div>
 				<div class="col-sm-4">
-					<strong>Released: </strong>2014
+					<strong>Released: </strong>{{ movie.Released }}
 				</div>
 			</div>
 
 			<div class="row margin-top-20">
 				<div class="col-sm-4">
-					<strong>Runtime: </strong>200 Mins
+					<strong>Runtime: </strong>{{ movie.Runtime }}
 				</div>
 				<div class="col-sm-4">
-					<strong>Genre: </strong>Action
+					<strong>Genre: </strong>{{ movie.Genre }}
 				</div>
 				<div class="col-sm-4">
-					<strong>Director: </strong>Arun Sood
-				</div>
-			</div>
-
-			<div class="row margin-top-20">
-				<div class="col-sm-12">
-					<strong>Actors: </strong>Actor list
+					<strong>Director: </strong>{{ movie.Director }}
 				</div>
 			</div>
 
 			<div class="row margin-top-20">
 				<div class="col-sm-12">
-					<strong>Plot: </strong>This is the exciting plot.
+					<strong>Actors: </strong>{{ movie.Actors }}
+				</div>
+			</div>
+
+			<div class="row margin-top-20">
+				<div class="col-sm-12">
+					<strong>Plot: </strong>{{ movie.Plot }}
 				</div>
 			</div>
 		</div>

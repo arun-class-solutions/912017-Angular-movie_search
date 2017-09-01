@@ -28,6 +28,19 @@ app.controller("movieCtrl", function($scope, $http) {
             // Step 1: Loop through movies.data.Search
             // Step 2: Make HTTP request to retrieve movie details via imdbID
             // Step 3: Push results to an array that is bound to the scope
+
+            $scope.movies = [];
+
+            movies.data.Search.forEach(function(record) {
+                $http
+                .get("http://omdbapi.com/?apikey=" + apikey + "&i=" + record.imdbID)
+                .then(function(movieDetails) {
+                    // Add data from the API to the $scope.movies array
+                    $scope.movies.push(movieDetails.data);
+                }, function(err) {
+                    console.log(err);
+                });
+            });
         }, function(err) {
             console.log(err);
         });
