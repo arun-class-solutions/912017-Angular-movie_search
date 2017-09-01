@@ -1,7 +1,7 @@
 <div id="container"></div>
 
 <!--Home Page-->
-<div id="search-input-box" class="border-radius" style="display:block;">
+<div ng-hide="movieResultsSuccess" id="search-input-box" class="border-radius">
 	<h2 class="txt-center">Search for Films</h2>
 
     <!--Set up form for movie search-->
@@ -25,7 +25,7 @@
 <div id="movie-card-container"></div>
 
 <!--Movie Cards-->
-<div class="movie-card border-radius margin-top-20" style="display:none;">
+<div ng-show="movieResultsSuccess" class="movie-card border-radius margin-top-20">
 	<div class="row">
 		<div class="col-sm-4">
 			<img src="http://ia.media-imdb.com/images/M/MV5BMTYxNTM5MDkwMF5BMl5BanBnXkFtZTcwMTAzMTEzMQ@@._V1_SX300.jpg" class="img-responsive movie-poster" />

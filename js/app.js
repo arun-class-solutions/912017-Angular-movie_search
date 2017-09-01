@@ -15,10 +15,14 @@ app.config(function($routeProvider) {
 // Main application controller
 app.controller("movieCtrl", function($scope, $http) {
 
+    // By default movieResultsSuccess is false to hide movie cards and show the form
+    $scope.movieResultsSuccess = false;
+
     $scope.submitSearch = function(event) {
         event.preventDefault();
 
-        console.log($scope.movieQuery);
+        // Change movieResultsSuccess to true to show movie cards and hide form
+        $scope.movieResultsSuccess = true;
     }
 
 });
