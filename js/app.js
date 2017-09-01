@@ -21,6 +21,17 @@ app.controller("movieCtrl", function($scope, $http) {
     $scope.submitSearch = function(event) {
         event.preventDefault();
 
+        // Make HTTP request to the API using $scope.movieQuery as your search
+        $http
+        .get("http://omdbapi.com/?apikey=" + apikey + "&s=" + $scope.movieQuery)
+        .then(function(movies) {
+            // Step 1: Loop through movies.data.Search
+            // Step 2: Make HTTP request to retrieve movie details via imdbID
+            // Step 3: Push results to an array that is bound to the scope
+        }, function(err) {
+            console.log(err);
+        });
+
         // Change movieResultsSuccess to true to show movie cards and hide form
         $scope.movieResultsSuccess = true;
     }
