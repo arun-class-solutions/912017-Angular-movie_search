@@ -15,4 +15,10 @@ app.config(function($routeProvider) {
 // Main application controller
 app.controller("movieCtrl", function($scope, $http) {
 
+    $scope.submitSearch = function(event) {
+        event.preventDefault();
+
+        console.log($scope.movieQuery);
+    }
+
 });
